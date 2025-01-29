@@ -1,111 +1,389 @@
-* {
+/* style.css */
+body {
+    font-family: 'Roboto', sans-serif; /* Added a modern font */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f5f5f5;
+    line-height: 1.6;
     color: #333;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scroll during animations */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* ... (rest of the CSS from previous responses) ... */
+
+nav ul li a {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav ul li a:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    color: #007bff; /* Change color on hover */
+}
+
+/* Animations */
+.hero-content h1, .hero-content h2, .hero-content p, .cta-button, .hero-image {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+section h2 {
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.project, .education-item, .contact-item {
+    animation: zoomIn 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Education Section */
+.education-container {
+    display: flex;
+    justify-content: center; /* Center the education items */
+    gap: 30px; /* Space between education items */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.education-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 400px; /* Set a width for the education item */
+    text-align: center; /* Center text within the education item */
+}
+
+.college-logo {
+    max-width: 200px; /* Adjust logo size */
+    margin-bottom: 10px;
+}
+
+.education-item h3 {
+    margin-bottom: 5px;
+}
+
+.education-item p {
+    margin-bottom: 10px;
+}
+
+/* ... (rest of your CSS) */
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+#hero {
+    background-color: #eee;
+    padding: 4rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    flex: 1;
     padding: 2rem;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 3rem;
-    color: #2c3e50;
+.hero-image {
+    max-width: 300px;
+    border-radius: 50%;
+    margin-left: 2rem;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.nav-button {
-    background-color: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: #fff;
     text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.nav-button:hover {
-    background-color: #2980b9;
+    border-radius: 5px;
 }
 
 section {
-    background-color: white;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 3rem 0;
 }
 
 h2 {
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-image {
+    max-width: 300px;
+    float: left;
+    margin-right: 2rem;
+    border-radius: 8px;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project {
+    width: 350px;
+    border: 1px solid #ddd;
+    padding: 1rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
 }
 
-.content {
-    max-width: 600px;
-    margin: 0 auto;
-    width: 90%;
-    padding: 1rem;
+.project img {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
 }
 
-.project-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.project h3 {
+    margin-top: 1rem;
 }
 
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.skill-card {
-    text-align: center;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-}
-
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.contact-btn {
-    background-color: #3498db;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 5px;
+.project a {
+    color: #007bff;
     text-decoration: none;
-    transition: background-color 0.3s;
 }
 
-.contact-btn:hover {
-    background-color: #2980b9;
+#skills ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#skills li {
+    display: inline;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+#contact {
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out; /* Animation added here */
+}
+
+.contact-item a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+#contact {
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Cool gradient background */
+    padding: 4rem 0; /* Increased padding */
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 30px; /* Increased gap between items */
+    max-width: 900px; /* Set a maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+
+.contact-item {
+    background-color: white;
+    padding: 20px 30px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-align: center; /* Center text within item */
+}
+
+.contact-item a {
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Vertically align icon and text */
+    gap: 15px; /* Space between icon and text */
+    color: #333; /* Dark text color */
+    text-decoration: none;
+}
+
+.contact-item i {
+    font-size: 2rem; /* Larger icons */
+    color: #007bff; /* Blue icon color */
+}
+
+.contact-item:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+/* Animation Example (Optional - Add to any element) */
+.contact-item {
+    animation: fadeInUp 1s ease-in-out; /* Apply animation */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* style.css */
+
+footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 2rem 0; /* Padding top and bottom */
+    text-align: center; /* Center the content */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+}
+
+.footer-content {
+    max-width: 1200px; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center the content horizontally */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically by default */
+    align-items: center; /* Center items horizontally */
+}
+
+.footer-logo {
+    font-size: 1.5rem; /* Larger logo text */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0; /* Margin bottom for spacing */
+    display: flex; /* Arrange links horizontally */
+}
+
+.footer-links li {
+    margin: 0 1rem; /* Space between links */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-links a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.footer-social {
+    margin-bottom: 1rem; /* Space above social icons */
+}
+
+.footer-social a {
+    color: #fff;
+    margin: 0 0.5rem; /* Space between social icons */
+    font-size: 1.2rem; /* Slightly larger icons */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.footer-social a:hover {
+    color: #007bff; /* Change color on hover */
+    transform: scale(1.2); /* Scale up slightly on hover */
+}
+
+.footer-copyright {
+    font-size: 0.9rem; /* Smaller copyright text */
+    color: #ccc; /* Light gray copyright text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+    }
+
+    .footer-links li {
+        margin: 0.5rem 0; /* Add margin top/bottom for vertical spacing */
+    }
 }
