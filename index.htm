@@ -3,101 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-   <link rel="stylesheet" href="style.css">
+    <title>Aman Kumar - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <h1>Aman Kumar</h1>
-
+    <header>
         <nav>
-            <div class="nav-buttons">
-                <button class="nav-button">Home</button>
-                <button class="nav-button">Projects</button>
-                <button class="nav-button">Skills</button>
-                <button class="nav-button">Contact</button>
-            </div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
+    </header>
 
-        <section>
-            <h2>About Me</h2>
-            <p>Hi, I'm Aman Kumar, a passionate Computer Science student in my 6th semester of B.Tech. I specialize in Graphics, Social Media, and Software Development, with a keen interest in Web Development, UI/UX Design, and Machine Learning.</p>
-        </section>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Aman Kumar</h1>
+            <h2>Computer Science Student</h2>
+            <p>Passionate about technology and eager to learn and contribute.</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+        <img src="./WhatsApp Image 2025-01-30 at 00.26.44_b89bf609.jpg" alt="Your Profile Picture" class="hero-image">
+    </section>
 
-        <section>
-            <h2>Projects</h2>
-            <div class="content">
-                <div class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p> Built a personal website using Css.</p>
-                </div>
-                <!-- Add more project cards as needed -->
-                <div class="content">
-                    <div class="project-card">
-                        <h3>AI Chatbot</h3>
-                        <p>Developed a chatbot using Python and NLP.</p>
-                    </div>
-                    <div class="content">
-                        <div class="project-card">
-                            <h3>E-commerce Website
-                            </h3>
-                            <p>Created a full-stack e-commerce site.</p>
-                        </div>
-                        <div class="content">
-                            <div class="project-card">
-                                <h3>Social Media Campaigns
-                                </h3>
-                                <p>Designed and managed successful digital campaigns.</p>
-                            </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="./WhatsApp Image 2025-01-30 at 00.26.44_b89bf609.jpg" alt="About Me Image" class="about-image">
+        <p>Hi, I'm Aman Kumar, a passionate Computer Science student in my 6th semester of B.Tech. I specialize in Graphics, Social Media, and Software Development, with a keen interest in Web Development, UI/UX Design, and Machine Learning.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="./1_zBmPieDd4eXM2ZYlNm2sXg.png" alt="Project 1">
+                <h3>Portfolio Website</h3>
+                <p>Built a personal website using Css.</p>
+                <a href="https://github.com/realamanvats/portfolio-website" target="_blank">GitHub Repo <i class="fab fa-github"></i></a>
             </div>
-        </section>
 
-        <section>
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <i class="fa-brain"></i>
-                    <h4>Web Development</h4>
-                    <p>HTML, CSS, JavaScript, React.js, Node.js</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-mobile-alt"></i>
-                    <h4>Programming</h4>
-                    <p>Python, JavaScript, C++</p>
-                </div>
-                <!-- Add more skill cards as needed -->
-                <div class="skill-card">
-                    <i class="fa-mobile-alt"></i>
-                    <h4>UI/UX</h4>
-                    <p>Figma, Adobe XD</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-mobile-alt"></i>
-                    <h4>Data Science</h4>
-                    <p>Machine Learning, Data Analysis, SQL</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-mobile-alt"></i>
-                    <h4>Graphics & Social Media</h4>
-                    <p>Adobe Photoshop, Canva, Video Editing</p>
-                </div>
+            <div class="project">
+                <img src="./chatbot-technology-website-template_107791-113.avif" alt="Project 2">
+                <h3>AI Chatbot</h3>
+                <p>Developed a chatbot using Python and NLP</p>
+                <a href="#" target="_blank">GitHub Repo <i class="fab fa-github"></i></a>
             </div>
-        </section>
+            <div class="project">
+                <img src="./eflyer.jpg" alt="Project 2">
+                <h3>E-commerce Website</h3>
+                <p>Created a full-stack e-commerce site</p>
+                <a href="#" target="_blank">GitHub Repo <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <div class="contact-btn">
-                    <h4>Email</h4>
-                    <p>22052702@kiit.ac.in</p>
-                </div>
-                <div class="contact-btn">
-                    <h4>Phone</h4>
-                    <p>+91 7461894499</p>
-                </div>
-                <!-- Add more contact buttons as needed -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li><i class="fab fa-python"></i> Python</li>
+            <li><i class="fab fa-java"></i> Java</li>
+            <li><i class="fab fa-html5"></i> HTML</li>
+            <li><i class="fab fa-css3"></i> CSS</li>
+        </ul>
+    </section>
+    <!-- ....... -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <div class="contact-container">  <div class="contact-item">
+                <a href="mailto:22052702@kiit.ac.in" target="_blank">
+                    <i class="fas fa-envelope"></i>  <span>22052702@kiit.ac.in</span>
+                </a>
             </div>
-        </section>
-    </div>
+
+            <div class="contact-item">
+                <a href="https://in.linkedin.com/in/aman-vats-aa5a5a1b2" target="_blank">
+                    <i class="fab fa-linkedin"></i>  <span>LinkedIn</span>
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <a href="https://github.com/realamanvats" target="_blank">
+                    <i class="fab fa-github"></i>  <span>GitHub</span>
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="tel:7461894499">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 7461894499</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Aman Kumar (Aman-Vats)</div>
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="footer-copyright">&copy; 2023 Aman Vats. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
