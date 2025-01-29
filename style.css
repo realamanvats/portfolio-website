@@ -1,24 +1,223 @@
-/* style.css */
 body {
     font-family: 'Roboto', sans-serif; /* Added a modern font */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #0a0a0a;
     overflow-x: hidden; /* Prevent horizontal scroll during animations */
 }
-
-/* ... (rest of the CSS from previous responses) ... */
-
-nav ul li a {
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+:root {
+    --primary-color: #222222; /* Dark background */
+    --secondary-color: #f0f6fc; /* Light text/icons */
+    --gradient-start: #4568DC; /* Example gradient */
+    --gradient-end: #B06AB3;  /* Example gradient */
 }
 
-nav ul li a:hover {
-    transform: scale(1.1); /* Scale up on hover */
-    color: #007bff; /* Change color on hover */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* Gradient background */
+    color: var(--secondary-color); /* Light text on gradient */
+    position:fixed; /* Stays at the top */
+    width: 100%;
+    z-index: 100; /* Ensure it's on top of other content */
 }
+.logo a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem; /* Add some padding */
+    border-radius: 5px;     /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: flex;        /* Use flexbox for icon and text alignment */
+    align-items: center;   /* Vertically align icon and text */
+}
+
+.link i {
+    margin-right: 0.5rem; /* Space between icon and text */
+}
+
+.link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover background */
+}
+
+.burger {
+    display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+}
+.line1, .line2, .line3 {
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color); /* Dark background for mobile menu */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        transform: translateY(-100%); /* Hide off-screen initially */
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0); /* Show when active */
+    }
+
+    .nav-links li {
+        margin: 1rem 0; /* Adjust vertical spacing */
+    }
+
+    .burger {
+        display: block; /* Show on smaller screens */
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+:root {
+    --primary-color: #1e1e1e;
+    --secondary-color: #f0f0f0;
+    --accent-color: #007bff;
+    --highlight-bg: rgba(0, 0, 0, 0.6); /* Semi-transparent background for highlights */
+}
+
+/* #hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #283c4e, #082333); /* Darker, more professional gradient */
+
+.hero-content {
+    width: 60%; /* Adjusted for better balance */
+    padding: 3rem; /* Increased padding */
+    text-align: left;
+    z-index: 1;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* ... (fadeInUp animation remains the same) */
+
+.hero-content h1 {
+    font-size: 3.5rem; /* Larger title */
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.7; /* Improved readability */
+    margin-bottom: 2rem;
+}
+
+.highlights {
+    display: flex;
+    gap: 2rem; /* Increased spacing */
+    margin-top: 2rem; /* Spacing from the paragraph */
+}
+
+.highlight-box {
+    background-color: var(--highlight-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transitions for hover effect */
+    backdrop-filter: blur(5px); /* Subtle blur effect for a modern look */
+}
+
+.highlight-box i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.highlight-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.highlight-box:hover {
+    transform: translateY(-5px); /* Move up on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Slightly less opaque */
+    animation: zoomInOut 2s ease infinite alternate;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add transform transition */
+}
+
+/* ... (zoomInOut animation remains the same) */
+
+.image-overlay { /* New overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Darker overlay */
+} 
 
 /* Animations */
 .hero-content h1, .hero-content h2, .hero-content p, .cta-button, .hero-image {
@@ -32,149 +231,19 @@ section h2 {
 .project, .education-item, .contact-item {
     animation: zoomIn 1s ease-in-out;
 }
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Education Section */
-.education-container {
-    display: flex;
-    justify-content: center; /* Center the education items */
-    gap: 30px; /* Space between education items */
-    flex-wrap: wrap; /* Allow items to wrap */
-}
-
-.education-item {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    width: 400px; /* Set a width for the education item */
-    text-align: center; /* Center text within the education item */
-}
-
-.college-logo {
-    max-width: 200px; /* Adjust logo size */
-    margin-bottom: 10px;
-}
-
-.education-item h3 {
-    margin-bottom: 5px;
-}
-
-.education-item p {
-    margin-bottom: 10px;
-}
-
-/* ... (rest of your CSS) */
-/* style.css */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-nav li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-}
-
-#hero {
-    background-color: #eee;
-    padding: 4rem 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-content {
-    flex: 1;
-    padding: 2rem;
-}
-
-.hero-image {
-    max-width: 300px;
-    border-radius: 50%;
-    margin-left: 2rem;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-section {
-    padding: 3rem 0;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.about-image {
-    max-width: 300px;
-    float: left;
-    margin-right: 2rem;
-    border-radius: 8px;
+@keyframes imageFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .project-container {
@@ -258,7 +327,26 @@ h2 {
     padding: 4rem 0; /* Increased padding */
     text-align: center;
 }
+.btn-subscribe {
+    background: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
 
+.btn-subscribe:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 .contact-container {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -310,6 +398,33 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+.contact1 {
+    padding: 5rem 2rem;
+    background: #f8fafc;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #666;
+    text-decoration: none;
 }
 /* style.css */
 
@@ -385,5 +500,237 @@ footer {
 
     .footer-links li {
         margin: 0.5rem 0; /* Add margin top/bottom for vertical spacing */
+    }
+}
+@media (max-width: 1200px) { /* Example breakpoint for large screens/desktops */
+    .project-container {
+        justify-content: space-around; /* Distribute projects evenly */
+    }
+
+    .project {
+        width: calc(33.33% - 2rem); /* Three projects per row */
+    }
+
+    #skills ul {
+        justify-content: space-around; /* Distribute skills evenly */
+    }
+
+    #skills li {
+        width: auto; /* Let skills take their natural width */
+    }
+}
+
+@media (max-width: 992px) { /* Example breakpoint for tablets/laptops */
+    .project {
+        width: calc(50% - 2rem); /* Two projects per row */
+    }
+
+    #skills ul {
+        justify-content: center; /* Center skills */
+    }
+
+    #skills li {
+        width: auto; /* Let skills take their natural width */
+    }
+}
+
+@media (max-width: 768px) { /* Example breakpoint for smaller tablets/large phones */
+    nav {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .logo a {
+        font-size: 1.2rem; /* Slightly smaller logo */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px; /* Adjust if needed */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: 1rem 0; /* Add vertical margins */
+    }
+
+    .link {
+        padding: 0.6rem 1rem; /* Slightly smaller link padding */
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    #hero {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .hero-content {
+        width: 90%;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .highlights {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .highlight-box {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image-container {
+        position: relative;
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+        height: 40vh;
+    }
+
+    .hero-image {
+        object-fit: cover;
+    }
+
+    #projects {
+        padding: 3rem 1rem;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+    }
+
+    #skills ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #skills li {
+        display: block;
+        width: 90%;
+        margin: 1rem 0;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-links li {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) { /* Example breakpoint for small phones */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .highlight-box {
+        padding: 1.5rem; /* Slightly smaller padding */
+    }
+
+    .highlight-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .highlight-box p {
+        font-size: 0.9rem;
+    }
+
+    .project h3 {
+        font-size: 1.2rem;
+    }
+
+    #skills li {
+        font-size: 1rem; /* Smaller skill font size */
+        padding: 0.6rem 1.2rem;
+    }
+
+    .contact-item a {
+        font-size: 0.9rem; /* Smaller contact text */
+    }
+
+    /* ... other adjustments as needed */
+}
+.cta-button {
+    display: inline-block; /* Makes it behave like an inline element but allows width/height */
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    background-color: var(--accent-color); /* Use your accent color */
+    color: white;
+    text-decoration: none; /* Remove underlines from links */
+    border-radius: 8px; /* Rounded corners */
+    font-weight: 500; /* Slightly bolder text */
+    font-size: 1.1rem; /* Adjust font size */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Make it clear it's clickable */
+}
+
+.cta-button:hover {
+    background-color: darken(var(--accent-color), 10%); /* Darken on hover */
+    transform: translateY(-2px); /* Move up slightly on hover */
+    box-shadow: 3px 3px 8px rgba(28, 23, 23, 0.3); /* More prominent shadow on hover */
+}
+
+.cta-button:active {
+    transform: translateY(0); /* Reset transform on click */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Smaller shadow when clicked */
+}
+
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+    .cta-button {
+        font-size: 1rem; /* Smaller font on smaller screens */
+        padding: 0.8rem 1.6rem; /* Adjust padding */
     }
 }
